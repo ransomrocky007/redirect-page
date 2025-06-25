@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    function getRefSource() {
+      const ref = document.referrer;
+      if (ref.includes("facebook.com")) return "Facebook";
+      return "অজানা উৎস";
+    }
+
+    window.onload = function () {
+      const source = getRefSource();
+      document.getElementById("message").innerText = `আপনি ${source} থেকে এসেছেন। ৩ সেকেন্ড পরে নিয়ে যাওয়া হবে...`;
+      setTimeout(function () {
+        window.location.href = "https://sahedinfo225.blogspot.com/2025/06/blog-post.html";
+      }, 3000);
+    };
+  </script>
+</head>
+<body>
+  <h2 id="message">লোড হচ্ছে...</h2>
+</body>
+</html>
